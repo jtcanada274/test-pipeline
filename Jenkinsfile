@@ -16,8 +16,8 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         container('docker') {  
-          sh "docker build -t jtcanada274/promo-app:dev ."  // when we run docker in this step, we're running it via a shell on the docker build-pod container, 
-          sh "docker push jtcanada274/promo-app:dev"        // which is just connecting to the host docker deaemon
+          sh "docker build -t jtcanada274/jenkins_slave_on_k8s:dev ."  // when we run docker in this step, we're running it via a shell on the docker build-pod container, 
+          sh "docker push jtcanada274/jenkins_slave_on_k8s:dev"        // which is just connecting to the host docker deaemon
         }
       }
     }
